@@ -2342,7 +2342,7 @@ header .main_nav .custom-search-input input[type='text']:focus {
   }
 }
 header .main_nav .custom-search-input button[type='submit'] {
-  position: absolute;
+  position: fixed;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -2383,7 +2383,7 @@ header .sticky_element {
 }
 header.version_1 .main_header {
   background-color: #b0dfe5;
- 
+  overflow-x: visible;
 }
 header.version_1 .main_header a.phone_top {
   color: #fff;

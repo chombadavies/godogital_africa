@@ -32,7 +32,7 @@
 
           <div class="col-12">
 
-            <a href="<?=route('services.create')?>" class="btn btn-sm btn-success" data-title="Add Item "><span class="fa fa-plus"><span> Add New Service</a>
+            <a href="<?=route('clients.create')?>" class="btn btn-sm btn-success" data-title="Add Item "><span class="fa fa-plus"><span> Add New Client</a>
 
                                        
  </div>

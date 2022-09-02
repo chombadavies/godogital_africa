@@ -26,45 +26,8 @@
                             <a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
                         </div>
                         <ul>
-                            <li class="megamenu submenu">
-                                <a href="javascript:void(0);" class="show-submenu-mega">About Us</a>
-                                <div class="menu-wrapper">
-                                    <div class="row small-gutters">
-                                        <div class="col-lg-3 " style="visibility: hidden !important;">
-                                            <div class="meme"><h3 style="color:white !important">Quick Links</h3></div>
-                                            <ul>
-                                                
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                           <div class="meme"><h3 style="color:white !important">Quick Links</h3></div> 
-                                            <ul>
-                                                {{-- <li><a href="listing-row-1-sidebar-left.html">Profile</a></li>
-                                                <li><a href="listing-row-2-sidebar-right.html">Corporate Social Responsibility</a></li>
-                                                <li><a href="listing-row-3-sidebar-left.html">How we work</a></li>
-                                                <li><a href="listing-row-4-sidebar-extended.html">Blog</a></li>
-                                                <li><a href="product-detail-1.html">Careers</a></li>
-                                                <li><a href="product-detail-2.html">Products</a></li> --}}
-                                              
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="meme"><h3 style="color:white !important">Why US</h3></div>
-                                             <ul>
-                                                 <li><a href="cart.html">Free Trials</a></li>
-                                                 {{-- <li><a href="checkout.html">Check Out Page</a></li>
-                                                 <li><a href="confirm.html">Confirm Purchase Page</a></li>
-                                                 <li><a href="account.html">Create Account Page</a></li>
-                                                 <li><a href="track-order.html">Track Order</a></li>
-                                                 <li><a href="help.html">Help Page</a></li>
-                                                 <li><a href="help-2.html">Help Page 2</a></li>
-                                                 <li><a href="leave-review.html">Leave a Review</a></li> --}}
-                                             </ul>
-                                         </div>
-                                   </div>
-                                    <!-- /row -->
-                                </div>
-                                <!-- /menu-wrapper -->
+                            <li>
+                                <a href="{{route('about')}}">About Us</a>
                             </li>
                             <li class="megamenu submenu">
                                 <a href="javascript:void(0);" class="show-submenu-mega">Services</a>
@@ -179,11 +142,9 @@
                                 </div>
                                 <!-- /menu-wrapper -->
                             </li>
+                            
                             <li>
-                                <a href="blog.html">Case Studies</a>
-                            </li>
-                            <li>
-                                <a href="#0">Contact Us</a>
+                                <a href="{{route('contact')}}">Contact Us</a>
                             </li>
                         </ul>
                     </div>

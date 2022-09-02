@@ -1,7 +1,7 @@
 @extends('layouts.frontend.master')
 
 @section('content')
-<main > 
+<main> 
     <div id="carousel-home">
         <div class="owl-carousel owl-theme">
             <div class="owl-slide cover" style="background-image: url(frontend/img/slides/home.jpeg);">
@@ -66,7 +66,7 @@
 
     {{-- <hr class="mb-0"> --}}
     
-    <div class="container margin_60_35">
+    <div class="container margin_60_35" >
         <div class="main_title mb-4">
             {{-- <h2>New Arrival</h2>
             <span>Products</span> --}}
@@ -104,75 +104,80 @@
         <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
             <div class="container margin_60">
                 <div class="row justify-content-center justify-content-md-start">
-                    <div class="col-lg-6 wow" data-wow-offset="150">
-                        <h3>Armor<br>Air Color 720</h3>
-                        <p>Lightweight cushioning and durable support with a Phylon midsole</p>
+                    <div class="col-lg-8 wow" data-wow-offset="150">
+                        
+                        <h2 style="color: white">Go digital Afica ,The leading IT Company in Kenya.</h2>
                         <div class="feat_text_block">
                             <div class="price_box">
-                                <span class="new_price">$90.00</span>
-                                <span class="old_price">$170.00</span>
+                                <span class="new_price">Software Enginering Solutions,</span>
+                                <span class="new_price">Graphics design,</span>
+                                
+                                <span class="new_price">Digital Marketing Solutions.</span>
                             </div>
-                            <a class="btn_1" href="listing-grid-1-full.html" role="button">Shop Now</a>
+                            <a class="btn_1" href="listing-grid-1-full.html" role="button">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
- 
+ <br>
     
     <div class="bg_gray" style="background-color: #b0dfe5">
         <div>
         <h3 style="margin-right: 50%"  >our portfollio ad Case Studies</h3></div>
         <div class="container margin_30">
             <div id="brands" class="owl-carousel">
-                
+                @foreach ($portfolios as $portfolio)
                 <div class="item">
-                    <a href="#0"><img src="{{asset('backend/uploads/1027.png')}}" data-src='' alt="" ></a>
+                    <a href="{{$portfolio->url}}" target="new"><img src="{{asset('frontend/img/clients/'.$portfolio->image)}}" data-src='{{asset('frontend/img/clients/'.$portfolio->image)}}' alt="meme" ></a>
                 </div><!-- /item -->
+                @endforeach
+               
                 
    
-                <div class="item">
-                     <a href="#0"><img src="{{asset('backend/uploads/1312.jpg')}}" data-src='' alt="" ></a>
+                {{-- <div class="item">
+                     <a href="#0"><img src="{{asset('frontend/img/clients/vv.jpeg')}}" data-src='' alt="" ></a>
                 </div><!-- /item -->
                 <div class="item">
-                     <a href="#0"><img src="{{asset('backend/uploads/2040.png')}}" data-src='' alt="" ></a>
+                     <a href="#0"><img src="{{asset('frontend/img/clients/cc.jpeg')}}" data-src='' alt="" ></a>
                 </div><!-- /item -->
                 <div class="item">
-                     <a href="#0"><img src="{{asset('backend/uploads/6766.png')}}" data-src='' alt="" ></a>
+                     <a href="#0"><img src="{{asset('frontend/img/clients/meme.jpeg')}}" data-src='' alt="" ></a>
                 </div><!-- /item -->
                 <div class="item">
-                     <a href="#0"><img src="{{asset('backend/uploads/8945.png')}}" data-src='' alt="" ></a>
+                     <a href="#0"><img src="{{asset('frontend/img/clients/dd.jpeg')}}" data-src='' alt="" ></a>
                 </div><!-- /item -->
                 <div class="item">
-                     <a href="#0"><img src="{{asset('backend/uploads/9354.png')}}" data-src='' alt="" ></a>
-                </div><!-- /item --> 
+                     <a href="#0"><img src="{{asset('frontend/img/clients/vv.jpeg')}}" data-src='' alt="" ></a>
+                </div><!-- /item -->  --}}
             </div><!-- /carousel -->
         </div><!-- /container -->
     </div>
     <!-- /bg_gray -->
     <hr style="color: black">
     
-    <div class="container margin_60_35">
+    <div class="container margin_60_35" style="background-color: antiquewhite">
         <div class="main_title">
             <h2>Latest News and Blog</h2>
-            <span>Blog</span>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
+            <span style="">Blog</span>
+            <p>When the educated citizens become involved in the financing, it is deterred</p>
         </div>
         <div class="row">
            @foreach ($blogs as $blog)
            <div class="col-lg-6">
-            <a class="box_news" href="{{route('blog',$blog->id)}}">
+            <a class="box_news" href="{{route('blogs')}}">
                 <figure>
                     <img src="{{asset('backend/uploads/'.$blog->image)}}" data-src="img/blog-thumb-1.jpg" alt="" width="400" height="266">
-                    <figcaption><strong>28</strong>Dec</figcaption>
+                    {{-- <figcaption><strong>28</strong>Dec</figcaption> --}}
                 </figure>
                 <ul>
-                    <li>{{$blog->owner}}</li>
-                    <li>20.11.2017</li>
+                    
+                    <li>{{$blog->publish_date}}</li>
                 </ul>
-                <h4>{{$blog->title}}</h4>
-                <p>{{$blog->description}}</p>
+                <h4><strong>{{$blog->title}}</strong></h4>
+                {{ Illuminate\Support\Str::limit($blog->summery, 100) }}
+                {{-- <p>{{$blog->summery}}</p> --}}
             </a>
         </div>
            @endforeach

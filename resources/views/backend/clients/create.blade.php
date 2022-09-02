@@ -27,7 +27,7 @@
         <div class="row">
           <!-- left column -->
           <div class="col-md-12">
-            <a href="<?=route('services.index')?>" class="btn btn-sm btn-success"><span class="fa fa-bars"><span> View List</a>
+            <a href="<?=route('clients.index')?>" class="btn btn-sm btn-success"><span class="fa fa-bars"><span> View List</a>
             </span>
             <!-- general form elements -->
             <div class="card card-primary">

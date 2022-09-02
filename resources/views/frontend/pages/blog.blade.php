@@ -20,14 +20,17 @@
                     <h1>{{$blog->title}}</h1>
                     <div class="postmeta">
                         <ul>
-                            <li><a href="#"><i class="ti-folder"></i> Category</a></li>
-                            <li><i class="ti-calendar"></i> 23/12/2015</li>
+                            
+                            <li><i class="ti-calendar"></i> {{$blog->publish_date}}</li>
                             <li><a href="#"><i class="ti-user"></i> Admin</a></li>
-                            <li><a href="#"><i class="ti-comment"></i> (14) Comments</a></li>
+                            
                         </ul>
                     </div>
                     <!-- /post meta -->
                     <div class="post-content">
+                        <div class="dropcaps">
+                            <p>{{$blog->summery}}</p>
+                        </div>
                         <div class="dropcaps">
                             <p>{{$blog->description}}</p>
                         </div>
@@ -38,80 +41,7 @@
                 </div>
                 <!-- /single-post -->
 
-                <div id="comments">
-                    <h5>Comments</h5>
-                    <ul>
-                        <li>
-                            <div class="avatar">
-                                <a href="#"><img src="img/avatar1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="comment_right clearfix">
-                                <div class="comment_info">
-                                    By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#"><i class="icon-reply"></i></a>
-                                </div>
-                                <p>
-                                    Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
-                                </p>
-                            </div>
-                            <ul class="replied-to">
-                                <li>
-                                    <div class="avatar">
-                                        <a href="#"><img src="img/avatar2.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="comment_right clearfix">
-                                        <div class="comment_info">
-                                            By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#"><i class="icon-reply"></i></a>
-                                        </div>
-                                        <p>
-                                            Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
-                                        </p>
-                                        <p>
-                                            Aenean iaculis sodales dui, non hendrerit lorem rhoncus ut. Pellentesque ullamcorper venenatis elit idaipiscingi Duis tellus neque, tincidunt eget pulvinar sit amet, rutrum nec urna. Suspendisse pretium laoreet elit vel ultricies. Maecenas ullamcorper ultricies rhoncus. Aliquam erat volutpat.
-                                        </p>
-                                    </div>
-                                    <ul class="replied-to">
-                                        <li>
-                                            <div class="avatar">
-                                                <a href="#"><img src="img/avatar2.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="comment_right clearfix">
-                                                <div class="comment_info">
-                                                    By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#"><i class="icon-reply"></i></a>
-                                                </div>
-                                                <p>
-                                                    Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
-                                                </p>
-                                                <p>
-                                                    Aenean iaculis sodales dui, non hendrerit lorem rhoncus ut. Pellentesque ullamcorper venenatis elit idaipiscingi Duis tellus neque, tincidunt eget pulvinar sit amet, rutrum nec urna. Suspendisse pretium laoreet elit vel ultricies. Maecenas ullamcorper ultricies rhoncus. Aliquam erat volutpat.
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="avatar">
-                                <a href="#"><img src="img/avatar3.jpg" alt="">
-                                </a>
-                            </div>
-
-                            <div class="comment_right clearfix">
-                                <div class="comment_info">
-                                    By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#"><i class="icon-reply"></i></a>
-                                </div>
-                                <p>
-                                    Cursus tellus quis magna porta adipiscin
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <hr>
+               <hr>
 
                 <h5>Leave a comment</h5>
                 <div class="row">
@@ -154,57 +84,19 @@
                         <h4>Latest Post</h4>
                     </div>
                     <ul class="comments-list">
+                        @foreach ($blogs as $blog)
                         <li>
                             <div class="alignleft">
-                                <a href="#0"><img src="img/blog-5.jpg" alt=""></a>
+                                <a href="{{route('blog',$blog->id)}}"><img src="{{asset('backend/uploads/'.$blog->image)}}" alt=""></a>
                             </div>
-                            <small>Category - 11.08.2016</small>
-                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                            <small><strong>{{$blog->publish_date}}</strong></small>
+                            <h3><a href="{{route('blog',$blog->id)}}" title="">{{ Illuminate\Support\Str::limit($blog->title, 45)}}</a></h3>
                         </li>
-                        <li>
-                            <div class="alignleft">
-                                <a href="#0"><img src="img/blog-6.jpg" alt=""></a>
-                            </div>
-                            <small>Category - 11.08.2016</small>
-                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
-                        </li>
-                        <li>
-                            <div class="alignleft">
-                                <a href="#0"><img src="img/blog-4.jpg" alt=""></a>
-                            </div>
-                            <small>Category - 11.08.2016</small>
-                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
-                        </li>
+                        @endforeach
+                       
                     </ul>
                 </div>
-                <!-- /widget -->
-                <div class="widget">
-                    <div class="widget-title">
-                        <h4>Categories</h4>
-                    </div>
-                    <ul class="cats">
-                        <li><a href="#">Food <span>(12)</span></a></li>
-                        <li><a href="#">Places to visit <span>(21)</span></a></li>
-                        <li><a href="#">New Places <span>(44)</span></a></li>
-                        <li><a href="#">Suggestions and guides <span>(31)</span></a></li>
-                    </ul>
-                </div>
-                <!-- /widget -->
-                <div class="widget">
-                    <div class="widget-title">
-                        <h4>Popular Tags</h4>
-                    </div>
-                    <div class="tags">
-                        <a href="#">Food</a>
-                        <a href="#">Bars</a>
-                        <a href="#">Cooktails</a>
-                        <a href="#">Shops</a>
-                        <a href="#">Best Offers</a>
-                        <a href="#">Transports</a>
-                        <a href="#">Restaurants</a>
-                    </div>
-                </div>
-                <!-- /widget -->
+              
             </aside>
             <!-- /aside -->
         </div>

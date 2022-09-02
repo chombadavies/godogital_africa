@@ -55,7 +55,7 @@ class ClientsController extends Controller
                 $extension = $image_tmp->getClientOriginalExtension();
                 // Generate New Image Name
                 $clientLogo = rand(111, 99999) . '.' . $extension;
-                $clientLogoPath = 'backend/uploads/' . $clientLogo;
+                $clientLogoPath = 'frontend/img/clients/' . $clientLogo;
                 // Upload the Image
                 Image::make($image_tmp)->save($clientLogoPath);
             }
@@ -127,7 +127,7 @@ class ClientsController extends Controller
            ->rawColumns(['action','photo'])
            ->editColumn('photo',function($model){
                $name=$model->image;
-               $path=asset('backend/uploads/'.$name);
+               $path=asset('frontend/img/clients/'.$name);
                return '<img src="'.$path.'" width="70px;" height="70px;"  alt="Service image" >';
            })
             ->addColumn('action', function ($model) {

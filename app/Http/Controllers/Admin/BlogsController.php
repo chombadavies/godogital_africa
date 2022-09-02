@@ -63,7 +63,7 @@ class BlogsController extends Controller
         $data=$request->all();
         $data['image']=$image;
         $data['publish_date']=new DateTime('now');
-        $data['owner']= Auth::guard('admin')->user()->id;
+        // $data['owner']= Auth::guard('admin')->user()->id;
        
         $status=Blog::create($data);
 

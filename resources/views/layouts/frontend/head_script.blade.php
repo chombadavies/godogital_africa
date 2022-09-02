@@ -24,7 +24,8 @@
 
 	<!-- SPECIFIC CSS -->
     <link href="{{asset('frontend/css/home_1.css')}}" rel="stylesheet">
-
+    <link href="{{asset('frontend/css/about.css')}}" rel="stylesheet">
+    <link href="{{asset('frontend/css/contact.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/blog.css')}}" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->

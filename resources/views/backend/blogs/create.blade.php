@@ -39,20 +39,25 @@
               <form role="form" action="{{route('blogs.store')}}" method="POST" enctype="multipart/form-data">@csrf
                 <div class="card-body">
                   <div class="row">
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <label for="">Blog Title</label>
                     <input type="text" class="form-control" name="title" value="{{old('title')}}" placeholder="Enter service name">
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <label for="">Blog Logo</label>
                     <input type="file" class="form-control" name="image" value="{{old('image')}}" placeholder="Enter service Logo">
                   </div>
                   
                   </div>
                   <div class="form-group">
+                    <label>blog summery</label>
+                    <textarea class="form-control" name="summery" rows="3"  placeholder="Enter blog summery">{{old('summery')}}</textarea>
+                  </div>
+                  <div class="form-group">
                     <label>blod description</label>
                     <textarea class="form-control" name="description" rows="3"  placeholder="Enter blog description">{{old('description')}}</textarea>
                   </div>
+                  
 
 
           
