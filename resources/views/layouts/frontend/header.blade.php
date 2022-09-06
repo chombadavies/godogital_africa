@@ -61,7 +61,7 @@
                                             </ul>
                                         </div>
                                         <div class="col-lg-3">
-                                           <div><h3 style="color:white !important">Email / SMS Marketing</h3></div>
+                                           <div class="meme"><h3 style="color:white !important">Email / SMS Marketing</h3></div>
                                            @php
                                            $emailmarketing_services=App\Models\Service::where('category', 'email_sms_marketing')->get();   
                                        @endphp
@@ -75,7 +75,7 @@
                                             </ul>
                                         </div>
                                         <div class="col-lg-3">
-                                            <div><h3 style="color:white !important">Ecommerce</h3></div>
+                                            <div class="meme"><h3 style="color:white !important">Ecommerce</h3></div>
                                             @php
                                             $ecommerses=App\Models\Service::where('category', 'ecommerse')->get();   
                                         @endphp
@@ -151,7 +151,7 @@
                     <!--/main-menu -->
                 </nav>
                 <div class="col-xl-2 col-lg-2 d-lg-flex align-items-center justify-content-end text-end">
-                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1"  role="button" data-toggle="modal" data-target="#exampleModal">Book a Call</a></div>
+                    <div class="owl-slide-animated owl-slide-cta"><a href="{{route('contact')}}" class="btn_1"  role="button" >Get A quote</a></div>
                 </div>
 
   </div>

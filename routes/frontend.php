@@ -7,6 +7,8 @@ Route::any('blogs',[App\Http\Controllers\Frontend\IndexController::class,'blogs'
 Route::any('blog/{id}',[App\Http\Controllers\Frontend\IndexController::class,'blog'])->name('blog');
 Route::any('about-us',[App\Http\Controllers\Frontend\IndexController::class,'aboutUs'])->name('about');
 Route::any('contact-us',[App\Http\Controllers\Frontend\IndexController::class,'contactUs'])->name('contact');
+Route::any('details',[App\Http\Controllers\Frontend\IndexController::class,'communication'])->name('communication');
+
 
 
 Route::get('/clear-cache', function() {

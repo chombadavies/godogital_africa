@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Auth::routes();
+Auth::routes();
 
 require __DIR__ . '/frontend.php';
 require __DIR__ . '/backend.php';

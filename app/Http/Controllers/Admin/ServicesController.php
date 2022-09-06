@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use DB;
+use Illuminate\Support\Facades\File;
 use Yajra\Datatables\Datatables;
 use Intervention\Image\Facades\Image;
 Use Session;
@@ -162,10 +163,15 @@ class ServicesController extends Controller
             $image_tmp = $request->file('summery_image');
             if ($image_tmp->isValid()) {
                 // Get Image Extension
+                $destination='backend/uploads/' . $service->description_image;
+                if(File::exists($destination)){
+                    File::delete($destination);
+                 }
+                 
                 $extension = $image_tmp->getClientOriginalExtension();
-                // Generate New Image Name
+              // Generate New Image Name
                 $summeryImageName = rand(111, 99999) . '.' . $extension;
-                $summeryImagePath = 'backend/uploads/' . $summeryImageName;
+                $summeryImagePath = 'backend/uploads/'.$summeryImageName;
                 // Upload the Image
                 Image::make($image_tmp)->save($summeryImagePath);
             }
@@ -180,6 +186,11 @@ class ServicesController extends Controller
 
             $image_tmp = $request->file('description_image');
             if ($image_tmp->isValid()) {
+                $destination='backend/uploads/' . $service->description_image;
+
+                if(File::exists($destination)){
+                   File::delete($destination);
+                }
                 // Get Image Extension
                 $extension = $image_tmp->getClientOriginalExtension();
                 // Generate New Image Name
@@ -197,6 +208,11 @@ class ServicesController extends Controller
 
             $image_tmp = $request->file('service_logo');
             if ($image_tmp->isValid()) {
+                $destination='backend/uploads/' . $service->service_logo;
+                
+                if(File::exists($destination)){
+                    File::delete($destination);
+                 }
                 // Get Image Extension
                 $extension = $image_tmp->getClientOriginalExtension();
                 // Generate New Image Name

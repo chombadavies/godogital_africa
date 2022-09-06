@@ -47,7 +47,9 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="exampleInputEmail1">Service Logo</label>
-                      <input type="file" class="form-control" name="service_logo" value="{{$service->Logo}}" >
+                      <input type="file" class="form-control" name="service_logo" value="{{$service->logo}}" >
+                      <img src="{{asset('backend/uploads/'.$service->service_logo)}}" alt="service logo">
+                     
                     </div>
                   </div>
                   <div class="row">
@@ -77,32 +79,23 @@
                     <label>Service Description</label>
                     <textarea class="form-control" rows="3" name="description" placeholder="Enter service description">{{$service->description}}</textarea>
                   </div>
-            <div class="row">
-                  <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="exampleInputFile"> Summery Image</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input form-control" name="summery_image" value="{{$service->summery_image}}">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                     
+                <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="exampleInputEmail1">Summery Image</label>
+                      <input type="file" class="form-control" name="summery_image" value="{{$service->summery_image}}" >
+                      <img src="{{asset('backend/uploads/'.$service->summery_image)}}" alt="summery image" height="70px" width="70px">
+                    
                     </div>
-                  </div></div>
-                  <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="exampleInputFile">Description Image</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input form-control " name="description_image" value="{{$service->description_image}}">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      
+      
+                    <div class="form-group col-md-6">
+                      <label for="exampleInputEmail1">Description Image</label>
+                      <input type="file" class="form-control" name="description_image" value="{{$service->description_image}}" >
+                      <img src="{{asset('backend/uploads/'.$service->description_image)}}" alt="description image" width="70px" height="70px">
+                   
                     </div>
-                  </div></div>
-
-                </div>
-                  
+                    
+      
+                      </div>
                 </div>
                 <!-- /.card-body -->
 

@@ -2670,6 +2670,7 @@ header.version_1 .main-menu > ul > li:hover > a {
 
 .main-menu > ul > li.submenu:hover > a:after {
   transform: rotate(180deg);
+  color: brown;
 }
 
 .main-menu ul > li.submenu > a {
@@ -2684,7 +2685,7 @@ header.version_1 .main-menu > ul > li:hover > a {
   font-size: 12px;
   font-size: 0.75rem;
   content: "\e64b";
-  color: #fff;
+  color: black;
   line-height: 1;
   padding: 0;
   margin: 0 0 0 5px;
@@ -2776,8 +2777,9 @@ nav a.open_close#close_in > i:hover {
   .kaka{
 margin-right: -15px;
 margin-left: -15px;
-background-color: #999;
+/* background-color: #999; */
 box-sizing: border-box;
+background-image: url("/frontend/img/bg.jpg");
 text-align: center;
 font-family: 'Lato',sans-serif;
 line-height: 32px;
@@ -2785,7 +2787,7 @@ font-size: 17px;
   }
 
   .InPgHead {
-    color: #0075B2;
+    color: white;
 font-weight: 700;
 margin-top: 25px;
 margin-bottom: 25px;
@@ -2841,7 +2843,7 @@ text-align: center;
   .main-menu ul ul li a {
     color: white;
     display: block;
-    padding: 8px 10px;
+    padding: 4px 5px;
     text-decoration:none !important;
   }
 

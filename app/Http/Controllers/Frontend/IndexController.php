@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Client;
+use App\Models\Detail;
 use App\Models\Blog;;
 
 class IndexController extends Controller
 {
     public function home(){
+     
     $services=Service::where('status','active')->orderBy('id','DESC')->limit(9)->get();
     $portfolios=Client::where('status','active')->orderBy('id','DESC')->get();
     $blogs=Blog::where('status','active')->orderBy('id','DESC')->get();
@@ -40,6 +42,14 @@ class IndexController extends Controller
          }
 
          public function contactUs(){
-          return view('frontend.pages.contact');
+          $services=service::all();
+          return view('frontend.pages.contact',compact('services'));
+         }
+
+         public function communication(Request $request){
+          $data=$request->all();
+        
+          $detail=Detail::create($data);
+          return redirect()->back()->with('status','information saved Successfully');
          }
 }

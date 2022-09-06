@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <!-- BASE CSS -->
     <link href="{{asset('frontend/css/bootstrap.custom.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
@@ -30,3 +30,20 @@
 
     <!-- YOUR CUSTOM CSS -->
     <link href="{{asset('frontend/css/custom.css')}}" rel="stylesheet">
+   
+    <style type="text/css">
+     
+        th, td { white-space: nowrap; }
+    
+        .modal .modal-dialog {
+    max-width: 750px;
+    }
+    .form-control{
+    box-shadow: inset 0 0 7.75px #3ac9d6 !important;
+    border-radius:1.011%
+    }
+    .col-xl-1-5{
+    background-color: #3ac9d6 !important;
+    }
+    
+     </style>

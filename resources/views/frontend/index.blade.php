@@ -14,7 +14,7 @@
                                     <p class="owl-slide-animated owl-slide-subtitle">
                                         Limited items available at this price
                                     </p> --}}
-                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="listing-grid-1-full.html" role="button">Show More</a></div>
+                                    {{-- <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="#0" role="button">Show More</a></div> --}}
                                 </div>
                             </div>
                         </div>
@@ -27,25 +27,27 @@
     <!-- /header-video -->
     
     {{-- style="background-image:url(frontend/img/slides/home.jpeg)" --}}
-    <div class="feat" style="background-color: #b0dfe5" >
+    <div class="feat" style="background-color: #b0dfe5;border-radius:10px" >
         <div class="container">
-            <span style="margin-left: 35%" >Our clients include 150 Global Brands, Silicon Valley Founders</span>
-            <br> <br>
+            {{-- <span style="margin-left: 35%" >Our clients include 150 Global Brands, Silicon Valley Founders</span> --}}
+          
             <ul>
                 <li>
                     <div class="box">
-                        <img src="{{asset('frontend/img/brands/omra-stroked.png')}}" alt="" width="50">
+                        <img src="{{asset('frontend/img/brands/checked.png')}}" alt="" width="50">
                         <div class="justify-content-center">
-                            <h3>Omra slaughter</h3>
-                            {{-- <p>For all oders over $99</p> --}}
+                            <h3>100%</h3>
+                            <p>Customer Satisfaction</p>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="box">
-                        <img src="{{asset('frontend/img/brands/somal.png')}}" alt="" width="50">
+                        <img src="{{asset('frontend/img/brands/index.png')}}" alt="" width="50">
                         <div class="justify-content-center">
-                            <h3>Somali Signal</h3>
+                            <h3>500+ </h3>
+                            
+                            <p>Completed Projects</p>
                         </div>
                     </div>
                 </li>
@@ -100,21 +102,21 @@
         <!-- /isotope-wrapper -->
     </div>
     <!-- /container -->
-    <div class="featured lazy" data-bg="url(frontend/img/slides/home.jpeg)">
+    <div class="featured lazy" data-bg="url(frontend/img/slides/home1.jpeg)">
         <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
             <div class="container margin_60">
                 <div class="row justify-content-center justify-content-md-start">
                     <div class="col-lg-8 wow" data-wow-offset="150">
                         
-                        <h2 style="color: white">Go digital Afica ,The leading IT Company in Kenya.</h2>
+                        {{-- <h2 style="color: white">Go digital Afica ,The leading IT Company in Kenya.</h2> --}}
                         <div class="feat_text_block">
                             <div class="price_box">
-                                <span class="new_price">Software Enginering Solutions,</span>
-                                <span class="new_price">Graphics design,</span>
+                                {{-- <span class="new_price">Software Enginering Solutions,</span>
+                                <span class="new_price">Graphics design,</span> --}}
                                 
-                                <span class="new_price">Digital Marketing Solutions.</span>
+                                {{-- <span class="new_price">Digital Marketing Solutions.</span> --}}
                             </div>
-                            <a class="btn_1" href="listing-grid-1-full.html" role="button">Contact Us</a>
+                            <a class="btn_1" href="{{route('contact')}}" role="button">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -123,9 +125,10 @@
     </div>
  <br>
     
-    <div class="bg_gray" style="background-color: #b0dfe5">
+    <div class="bg_gray" style="background-color: #b0dfe5;border-radius:14px">
         <div>
-        <h3 style="margin-right: 50%"  >our portfollio ad Case Studies</h3></div>
+        <h3 style="margin-left: 15%" >Our clients include 150 Global Brands, Silicon Valley Founders</h3>
+    </div>
         <div class="container margin_30">
             <div id="brands" class="owl-carousel">
                 @foreach ($portfolios as $portfolio)
@@ -133,31 +136,14 @@
                     <a href="{{$portfolio->url}}" target="new"><img src="{{asset('frontend/img/clients/'.$portfolio->image)}}" data-src='{{asset('frontend/img/clients/'.$portfolio->image)}}' alt="meme" ></a>
                 </div><!-- /item -->
                 @endforeach
-               
-                
-   
-                {{-- <div class="item">
-                     <a href="#0"><img src="{{asset('frontend/img/clients/vv.jpeg')}}" data-src='' alt="" ></a>
-                </div><!-- /item -->
-                <div class="item">
-                     <a href="#0"><img src="{{asset('frontend/img/clients/cc.jpeg')}}" data-src='' alt="" ></a>
-                </div><!-- /item -->
-                <div class="item">
-                     <a href="#0"><img src="{{asset('frontend/img/clients/meme.jpeg')}}" data-src='' alt="" ></a>
-                </div><!-- /item -->
-                <div class="item">
-                     <a href="#0"><img src="{{asset('frontend/img/clients/dd.jpeg')}}" data-src='' alt="" ></a>
-                </div><!-- /item -->
-                <div class="item">
-                     <a href="#0"><img src="{{asset('frontend/img/clients/vv.jpeg')}}" data-src='' alt="" ></a>
-                </div><!-- /item -->  --}}
+      
             </div><!-- /carousel -->
         </div><!-- /container -->
     </div>
     <!-- /bg_gray -->
     <hr style="color: black">
     
-    <div class="container margin_60_35" style="background-color: antiquewhite">
+    <div class="container margin_60_35" style="background-color: antiquewhite;border-radius:14px">
         <div class="main_title">
             <h2>Latest News and Blog</h2>
             <span style="">Blog</span>
@@ -185,6 +171,7 @@
         </div>
         <!-- /row -->
     </div>
+    <br>
     <!-- /container -->
     
 </main>

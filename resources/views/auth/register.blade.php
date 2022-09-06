@@ -1,7 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.backend.main')
 
 @section('content')
-<div class="container">
+{!! "&nbsp;" !!} 
+<br><br>
+<div class="container" style="margin-left: 15%">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

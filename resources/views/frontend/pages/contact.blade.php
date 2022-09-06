@@ -2,43 +2,89 @@
 
 @section('content')
     
-<main class="bg_gray">
+<main class="bg_gray" style="background-color: blanchedalmond">
 	
     <div class="container">
         <div class="main_title">
             <h2>Contact Go-digital Afica</h2>
             <p></p>
         </div>
+
+<style>
+    .box_contacts{
+        background-color: #5695ab;
+        color:white
+    }
+</style>
+
+        
         <div class="row justify-content-center">
-            <div class="col-lg-5">
+            <div class="col-lg-5 col-md-3">
                 <div class="box_contacts">
-                    <i class="ti-support"></i>
-                    <h2>Go-digital Africa Help Center</h2>
-                    <a href="#0">+94 423-23-221</a> - <a href="#0">help@allaia.com</a>
-                    <small>MON to FRI 9am-6pm SAT 9am-2pm</small>
+                    <i class="ti-location-pin"></i>
+                    <h2>Go-digital Africa Head Office</h2>
+                   <span>Nairobi, Pioneer House, Kimathi steet,
+                    2nd Floor Room 3.</span>
+                    <span>MON to FRI 9am-6pm SAT 9am-2pm</span> 
                 </div>
-                <div class="box_contacts">
-                    <i class="fa fa-map-marker"></i>
+                <div class="box_contacts" >
+                    <i class="ti-headphone-alt" aria-hidden="true"></i>
                     <h2>Go-digital Africa Help Center</h2>
-                    <a href="#0">+94 423-23-221</a> - <a href="#0">help@allaia.com</a>
-                    <small>MON to FRI 9am-6pm SAT 9am-2pm</small>
+                    <span>+254-700222249</span>
+                   
+                </div>
+               
+                <div class="box_contacts" >
+                    <i class="ti-email" aria-hidden="true"></i>
+                    <br>
+                    <span>info@goditalafrica.com</span> 
+                   
                 </div>
             </div>
-            <div class="col-lg-4 col-md-7 add_bottom_25">
+            
+            <div class="col-lg-4 col-md-9 add_bottom_25">
+                <form action="{{route('communication')}}" method="POST">
+                    @csrf
                 <h4 class="pb-3">Drop Us a Line</h4>
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Name *">
+                <div class="row">
+                <div class="form-group col-md-6">
+                    <input class="form-control" type="text" name="name"  placeholder="Name *">
                 </div>
+                <div class="form-group col-md-6">
+                    <input class="form-control" type="email" name="email"  placeholder="Email *">
+                </div> </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" name="phone_number" placeholder="phone Number *">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input class="form-control" type="text" name="city"  placeholder="City *">
+                    </div> </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <input class="form-control" type="text" name="address" placeholder="Address *">
+                        </div>
+                        <div class="form-group col-md-6">
+                           
+                            <select name="service_id" id="" class="form-control">
+                                <option selected disabled>Select Service</option>
+                                @foreach ($services as $service)
+                                <option value="{{$service->id}}">{{$service->title}}</option>
+                                @endforeach
+                                
+                            </select>
+                        </div> </div>
                 <div class="form-group">
-                    <input class="form-control" type="email" placeholder="Email *">
+                    <textarea class="form-control" name="message" style="height: 150px;" placeholder="Requirements Message *"></textarea>
                 </div>
-                <div class="form-group">
-                    <textarea class="form-control" style="height: 150px;" placeholder="Message *"></textarea>
-                </div>
+              
                 <div class="form-group">
                     <input class="btn_1 full-width" type="submit" value="Submit">
                 </div>
+            </form>
             </div>
+  
             
         </div>
 

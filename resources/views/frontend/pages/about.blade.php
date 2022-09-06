@@ -1,10 +1,10 @@
 @extends('layouts.frontend.master')
 
 @section('content')
-<main class="bg_gray">
+<main  style="background-color: blanchedalmond">
     <div class="container margin_60_35 add_bottom_30">
         <div class="main_title">
-            <h2>About Allaia</h2>
+            <h2>About Go Dogital Africa</h2>
             <p>Euismod phasellus ac lectus fusce parturient cubilia a nisi blandit sem cras nec tempor adipiscing rcu ullamcorper ligula.</p>
         </div>
         <div class="row justify-content-center align-items-center">
@@ -109,7 +109,7 @@
 
 <div class="container margin_60">
     <div class="main_title">
-        <h2>Meet Allaia Staff</h2>
+        <h2>Meet Go-digital Africa  Staff</h2>
         <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
     </div>
     <div class="owl-carousel owl-theme carousel_centered">
