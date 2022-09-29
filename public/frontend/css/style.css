@@ -1931,7 +1931,7 @@ a.btn_1,
 .btn_1 {
   border: none;
   color: #fff;
-  background: #004dda;
+  background: #1A75BB;
   outline: none;
   cursor: pointer;
   display: inline-block;
@@ -2308,6 +2308,7 @@ header ul.top_tools > li .dropdown-access .dropdown-menu a.btn_1:hover {
 header .main_nav {
   position: relative;
   z-index: 999;
+
 }
 @media (max-width: 767px) {
   header .main_nav {
@@ -2665,12 +2666,12 @@ header.version_1 .main-menu > ul > li > a {
 }
 
 header.version_1 .main-menu > ul > li:hover > a {
-  color: brown;
+  color: #1A75BB;
 }
 
 .main-menu > ul > li.submenu:hover > a:after {
   transform: rotate(180deg);
-  color: brown;
+  color: #1A75BB;
 }
 
 .main-menu ul > li.submenu > a {
@@ -2763,7 +2764,7 @@ nav a.open_close#close_in > i:hover {
     left: 0;
     top: 100%;
     display: block;
-    background: #2a52be;
+    background: #1A75BB;
     display: block;
     min-width: 190px;
     transform: scale(0.4);
@@ -6392,8 +6393,9 @@ a.social_bt.google:before {
   }
 }
 footer {
-  background-color: #2a52be;
+  background-color: #1A75BB;
   padding: 60px 0 35px 0;
+  /* opacity: 40%; */
 }
 @media (max-width: 767px) {
   footer {
@@ -6566,8 +6568,8 @@ footer .links ul li a:after {
   border-radius: 0;
   padding-left: 15px;
   background-color: #f3f3f3;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #ccc;
+  background-color: white;
+  color: #1A75BB;
 }
 #newsletter input[type='email']:focus {
   border: 0;

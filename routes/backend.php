@@ -22,3 +22,5 @@ Route::group(['prefix'=>'admin','middleware' => ['admin']],function(){
     Route::any('/product/fetchproducts','App\Http\Controllers\Admin\ProductsController@fetchList');
   
 });
+
+Route::any('/messages-status/{id}',[App\Http\Controllers\Admin\ServicesController::class, 'messageStatus'])->name('message.status');

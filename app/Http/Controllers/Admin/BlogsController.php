@@ -120,4 +120,39 @@ class BlogsController extends Controller
     {
         //
     }
+
+    public function fetchMessages()
+    {
+       
+        $models = DB::select('SELECT * FROM `details`');
+        $models = Detail::where('status','active')->orderBy('id','asc')->get();
+        
+        // $models = Detail::whereNotNull('parent_id')->orderBy('id','asc')->get();
+      
+        return Datatables::of($models)
+           ->rawColumns(['action','photo'])
+           ->editColumn('photo',function($model){
+               $name=$model->description_image;
+               $path=asset('backend/uploads/'.$name);
+               return '<img src="'.$path.'" width="70px;" height="70px;"  alt="Service image" >';
+           })
+            ->addColumn('action', function ($model) {
+                $edit_url = route('services.edit',$model->id);
+                $view_url = route('services.show',$model->id);
+             
+              
+
+                return '<div class="dropdown ">
+        <button class="btn btn-pink btn btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+        <li><a style="cursor:pointer;" data-title="View" href="' . $edit_url . '">Edit Service</a></li>
+        <li><div class="dropdown-divider"></div></li>
+        <li><a style="cursor:pointer;" class="reject-modal"  data-title="View" data-url="' . $view_url . '">sub_services</a></li>
+        </ul>
+        </div> ';
+
+            })
+            ->make(true);
+    }
 }

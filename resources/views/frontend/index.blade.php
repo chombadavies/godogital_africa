@@ -83,7 +83,7 @@
                 <div class="grid_item">
                     <div class="card" style="width: 22rem;">
                             <div class="card-body">
-                                <img src="{{asset('backend/uploads/'.$service->service_logo)}}" alt="" max-width="100%" height="auto"><br>
+                                <img src="{{asset('backend/uploads/'.$service->service_logo)}}" alt="" max-width="50px" height="60px"><br>
                               <h5 class="card-title">{{$service->title}}</h5> <br>
                               <p class="card-text" style="font-size:18px;line-height:30px">{{ Illuminate\Support\Str::limit($service->summery, 260) }}</p>
                               <a href="{{route('display',$service->id)}}" class="btn btn-orange c-btn non-cta">Learn More</a>
@@ -143,7 +143,7 @@
     <!-- /bg_gray -->
     <hr style="color: black">
     
-    <div class="container margin_60_35" style="background-color: antiquewhite;border-radius:14px">
+    <div class="container margin_60_35" style="background-color: #b0dfe5;border-radius:14px">
         <div class="main_title">
             <h2>Latest News and Blog</h2>
             <span style="">Blog</span>
@@ -154,7 +154,7 @@
            <div class="col-lg-6">
             <a class="box_news" href="{{route('blogs')}}">
                 <figure>
-                    <img src="{{asset('backend/uploads/'.$blog->image)}}" data-src="img/blog-thumb-1.jpg" alt="" width="400" height="266">
+                    <img src="{{asset('backend/uploads/'.$blog->image)}}" data-src="img/blog-thumb-1.jpg" alt="blog_image" width="auto" height="auto">
                     {{-- <figcaption><strong>28</strong>Dec</figcaption> --}}
                 </figure>
                 <ul>

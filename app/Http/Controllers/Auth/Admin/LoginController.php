@@ -17,8 +17,8 @@ class LoginController extends Controller
      
 if(Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password])){
      
-    session::flash('success_message','admin login Susscessful');
-   return redirect()->intended(route('admin'));
+   
+   return redirect()->intended(route('admin'))->with('success','Admin Login Successful');
 
 }else{
     // return redirect()->route('admin.login.form'); 

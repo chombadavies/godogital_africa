@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Detail;
 use DB;
 use Illuminate\Support\Facades\File;
 use Yajra\Datatables\Datatables;
@@ -285,6 +286,14 @@ class ServicesController extends Controller
 
             })
             ->make(true);
+    }
+
+    public function messageStatus($id){
+
+        $message=Detail::findOrFail($id);
+        $message->status='responded';
+        $message->update();
+        return redirect()->route('admin')->with('success','status updated successfully');
     }
 
 }

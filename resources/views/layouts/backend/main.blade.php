@@ -131,6 +131,12 @@ background-color: #3ac9d6 !important;
 }
 
  </style>
+
+<script>
+  setTimeout(function(){
+  $('#alert').slideUp();
+    },3000)
+   </script>
 @stack('scripts')
 </body>
 </html>

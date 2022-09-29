@@ -8,7 +8,7 @@
             <div class="row small-gutters">
                 <div class="col-xl-2 col-lg-3 d-lg-flex align-items-center">
                     <div id="logo">
-                        <a href="{{route('home')}}"><img src="frontend/img/logo.png" alt="go digital" width="85" height="55"></a>
+                        <a href="{{route('home')}}"><img src="frontend/img/logo.png" alt="go digital" width="100%" height="65"></a>
                     </div>
                 </div>
                 <nav class="col-xl-8 col-lg-7">

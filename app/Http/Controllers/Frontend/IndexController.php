@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Client;
 use App\Models\Detail;
+use Mapper;
 use App\Models\Blog;;
 
 class IndexController extends Controller
@@ -43,13 +44,14 @@ class IndexController extends Controller
 
          public function contactUs(){
           $services=service::all();
+          Mapper::map(-1.2834312, 36.8226184);
           return view('frontend.pages.contact',compact('services'));
          }
 
          public function communication(Request $request){
           $data=$request->all();
-        
+       
           $detail=Detail::create($data);
-          return redirect()->back()->with('status','information saved Successfully');
+          return redirect()->back()->with('success','information saved Successfully');
          }
 }

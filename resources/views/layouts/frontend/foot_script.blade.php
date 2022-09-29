@@ -7,6 +7,11 @@
 <!-- SPECIFIC SCRIPTS -->
 <script src="{{asset('frontend/js/carousel-home.min.js')}}"></script>
 <script src="{{asset('frontend/js/sweetalert.min.js')}}"></script>  
+<script>
+setTimeout(function(){
+    $('#alert').slideUp();
+      },3000)
+     </script>
 
 
 @yield('scripts')

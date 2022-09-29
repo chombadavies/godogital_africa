@@ -22,3 +22,8 @@ Auth::routes();
 require __DIR__ . '/frontend.php';
 require __DIR__ . '/backend.php';
 
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    return 'Application cache cleared';
+});
+
