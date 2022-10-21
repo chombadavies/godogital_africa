@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Question;
 use App\Models\Client;
 use App\Models\Detail;
 use Mapper;
@@ -13,12 +14,13 @@ use App\Models\Blog;;
 class IndexController extends Controller
 {
     public function home(){
-     
+      $questions=Question::where('status','active')->get();
+      // dd($questions);
     $services=Service::where('status','active')->orderBy('id','DESC')->limit(9)->get();
     $portfolios=Client::where('status','active')->orderBy('id','DESC')->get();
     $blogs=Blog::where('status','active')->orderBy('id','DESC')->get();
    
-             return view('frontend.index',compact('services','blogs','portfolios'));
+             return view('frontend.index',compact('services','blogs','portfolios','questions'));
          }
 
          public function Display($id){
@@ -43,9 +45,10 @@ class IndexController extends Controller
          }
 
          public function contactUs(){
-          $services=service::all();
+          $services=Service::all();
+          $questions=Question::all();
           Mapper::map(-1.2834312, 36.8226184);
-          return view('frontend.pages.contact',compact('services'));
+          return view('frontend.pages.contact',compact('services','questions'));
          }
 
          public function communication(Request $request){

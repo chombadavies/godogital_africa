@@ -2,36 +2,52 @@
 
 @section('content')
 <main> 
-    <div id="carousel-home">
-        <div class="owl-carousel owl-theme">
+ <div id="carousel-home">
+        <div class="owl-carousel owl-theme memet">
             <div class="owl-slide cover" style="background-image: url(frontend/img/slides/home.jpeg);">
                 <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container">
                         <div class="row justify-content-center justify-content-md-end">
                             <div class="col-lg-6 static">
-                                <div class="slide-text text-end white">
-                                    {{-- <h2 class="owl-slide-animated owl-slide-title">Attack Air<br>Max 720 Sage Low</h2>
-                                    <p class="owl-slide-animated owl-slide-subtitle">
-                                        Limited items available at this price
-                                    </p> --}}
-                                    {{-- <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="#0" role="button">Show More</a></div> --}}
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+          
+            <div class="owl-slide cover" style="background-image: url(frontend/img/slides/home2.jpeg);">
+                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+                    <div class="container">
+                        <div class="row justify-content-center justify-content-md-start">
+                            <div class="col-lg-6 static">
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="owl-slide cover" style="background-image: url(frontend/img/slides/home3.jpeg);">
+                <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(255, 255, 255, 0.5)">
+                    <div class="container">
+                        <div class="row justify-content-center justify-content-md-start">
+                            <div class="col-lg-12 static">
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
         </div>
         <div id="icon_drag_mobile"></div>
     </div>
-    <!-- /header-video -->
     
-    {{-- style="background-image:url(frontend/img/slides/home.jpeg)" --}}
-    <div class="feat" style="background-color: #b0dfe5;border-radius:10px" >
+    
+   
+    <div class="feat" style="background-color: #b0dfe5;border-radius:24px" >
         <div class="container">
-            {{-- <span style="margin-left: 35%" >Our clients include 150 Global Brands, Silicon Valley Founders</span> --}}
-          
-            <ul>
+           <ul>
                 <li>
                     <div class="box">
                         <img src="{{asset('frontend/img/brands/checked.png')}}" alt="" width="50">
@@ -142,6 +158,61 @@
     </div>
     <!-- /bg_gray -->
     <hr style="color: black">
+
+    <div class="bg_gray" style="background-image: repeating-radial-gradient(#000080, #1A75BB 10%, green 15%);">
+       
+        <div class="container margin_30">
+          
+            <div class="row">
+                <div class="col-md-5" style="background-color: #000080">
+                    <p style="font-size: 56px;padding: 30px ;color:white">
+                        WHY CHOOSE GO-DIGITAL AFRICA
+                        <hr class="hrme">
+                    </p>
+                   
+              
+                </div>
+
+
+                <div class="col-md-7" style="background-color: #1A75BB">
+                    <p class="yus col-md-11">
+                       Our Advertising rates are very flexible and affordable.
+                  An impressive portifolio and positive feedbacks in all our work.
+           Go Digital Africa has a strong,successful professional reputation and a high level of work ethics and excellence.
+                    </p>
+                </div>
+            </div>
+        </div><!-- /container -->
+
+  </div>
+<div class="container margin_60_35 bg_gray" >
+        <div class="main_title mainmeme">
+            <h2>Frequentry Asked Questions</h2>
+         </div>
+        <div class="row">
+           
+            <div class="">
+
+                @foreach ($questions  as $question)
+                <div class="card form-control me_card" >
+
+                    <h6  class="qh col-md-11 hmm" data-question-id="{{$question->id}}" id="question_{{$question->id}}">{{$question->title}}</h6>
+                    <i class="fa fa-plus" style="color: blue"></i>
+                    <br>
+                    <span class="description" data-service-description="{{$question->description}}" id="description">{{$question->description}}span>
+          
+                    <span></span>
+                  </div>
+                  <br>
+                @endforeach
+               </div>
+
+               
+           
+        </div>
+        <!-- /row -->
+    </div>
+    <br>
     
     <div class="container margin_60_35" style="background-color: #b0dfe5;border-radius:14px">
         <div class="main_title">
@@ -154,7 +225,7 @@
            <div class="col-lg-6">
             <a class="box_news" href="{{route('blogs')}}">
                 <figure>
-                    <img src="{{asset('backend/uploads/'.$blog->image)}}" data-src="img/blog-thumb-1.jpg" alt="blog_image" width="auto" height="auto">
+                    <img src="{{asset('backend/uploads/'.$blog->image)}}" data-src="img/blog-thumb-1.jpg" alt="blog_image" width="50px" height="4%">
                     {{-- <figcaption><strong>28</strong>Dec</figcaption> --}}
                 </figure>
                 <ul>
@@ -172,7 +243,51 @@
         <!-- /row -->
     </div>
     <br>
-    <!-- /container -->
+
+
+   
+
+   
+
+    </div>
+
+    {{-- <section class="o-why-choose-cn"><div class="container mobile-container"><div class="row"><div class="o-why-choose-cn_left"><h2 class="white-color font-weight-600" itemprop="alternativeHeadline"><span>Why Choose</span>Capital Numbers?</h2></div><div class="o-why-choose-cn_right"><h3 class="why-text white pad-bot-20" itemprop="text">We use custom teams to help businesses scale their development, design &amp; digital marketing capabilities</h3></div></div></div></section> --}}
+    
+
+
     
 </main>
+@endsection
+
+
+@section('scripts')
+    
+
+<script>
+$(document).ready(function(){
+$(".description").hide();
+  $(".qh").click(function(e){
+    e.preventDefault();
+    var jobExcerpt = $(this).parent().find(".description");
+    $(jobExcerpt).toggle(500);
+  });
+});
+</script>
+
+{{-- <script>
+    $(document).ready(function(){
+    $(".description").hide();
+    //   $(".qh").click(function(e){
+        
+        $(".qh").on('show.bs.collapse', function(event) {
+        e.preventDefault();
+        var jobExcerpt = $(this).parent().find(".description");
+        $(jobExcerpt).toggle(500);
+      }).on('hide.bs.collapse', function(event) {
+        $(this).prev(".card-header").find(".fa fa-plus collapsed").removeClass("fa-minus").addClass("fa-plus").addClass("fas");
+        event.stopPropagation();
+      });
+    });
+    </script> --}}
+
 @endsection

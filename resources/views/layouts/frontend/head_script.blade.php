@@ -1,12 +1,12 @@
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="Ansonika">
     <title>GoDigital Africa</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('frontend/img/logo.jpeg')}}" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
@@ -36,14 +36,14 @@
         th, td { white-space: nowrap; }
     
         .modal .modal-dialog {
-    max-width: 750px;
+    max-width: 600px;
     }
-    .form-control{
+    /* .form-control{
     box-shadow: inset 0 0 7.75px #3ac9d6 !important;
     border-radius:1.011%
     }
     .col-xl-1-5{
     background-color: #3ac9d6 !important;
-    }
+    } */
     
      </style>

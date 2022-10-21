@@ -7321,3 +7321,35 @@ img.mfp-img {
 .mfp-bg {
   opacity: 0.8 !important;
 }
+
+.yus{
+
+  font-size: 24px;
+  padding: 30px;
+  line-height:40px;
+  color:white;
+  position: relative;
+  margin-top: 3%;
+
+}
+.qh{
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.me_card{
+  height: auto !important;
+  flex:1;
+ 
+}
+.hmm{
+  font-size: 19px;
+  line-height: 25px;
+  font-weight: 700;
+}
+.description{
+  font-size: 19px;
+line-height: 30px;
+font-family: Montserrat,sans-serif;
+font-weight: 500;
+}

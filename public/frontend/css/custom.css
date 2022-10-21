@@ -7,3 +7,19 @@
     color:black;
     border-radius: 24px;
 }
+
+/* .memet{
+    display: flex !important;
+    animation:slide 12s infinite ;
+}
+
+@keyframes slide {
+    0% {transform: translateX(0%);}
+    33.33% {transform:translateX(0%)}
+    37.33% {transform:translateX(-100%)}
+    66.67% {transform:translateX(-100%)}
+    69.33% {transform:translateX(-200%)}
+    100.00% {transform:translateX(-200%)}
+  } */
+
+     

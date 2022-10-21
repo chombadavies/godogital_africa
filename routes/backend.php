@@ -16,6 +16,7 @@ Route::group(['prefix'=>'admin','middleware' => ['admin']],function(){
     Route::resource('skills', \App\Http\Controllers\Admin\SkillsController::class);
     Route::resource('industries', \App\Http\Controllers\Admin\IndustriesController::class);
     Route::resource('clients', \App\Http\Controllers\Admin\ClientsController::class);
+    Route::resource('questions', \App\Http\Controllers\Admin\QuestionsController::class);
     Route::any('/fetchservices',[App\Http\Controllers\Admin\ServicesController::class, 'fetchServices']);
     Route::any('/fetchsubservices',[App\Http\Controllers\Admin\SubServicesController::class, 'fetchSubServices']);
     Route::any('/fetchclients',[App\Http\Controllers\Admin\ClientsController::class, 'fetchClients']);
