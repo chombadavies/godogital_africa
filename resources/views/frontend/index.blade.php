@@ -199,7 +199,7 @@
                     <h6  class="qh col-md-11 hmm" data-question-id="{{$question->id}}" id="question_{{$question->id}}">{{$question->title}}</h6>
                     <i class="fa fa-plus" style="color: blue"></i>
                     <br>
-                    <span class="description" data-service-description="{{$question->description}}" id="description">{{$question->description}}span>
+                    <span class="description" data-service-description="{{$question->description}}" id="description">{{$question->description}}<span>
           
                     <span></span>
                   </div>

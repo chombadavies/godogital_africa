@@ -4,12 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Service;
+use App\Models\Subfunction;
+use App\Models\Whatwedo;
+
 use DB;
+use Illuminate\Support\Facades\File;
 use Yajra\Datatables\Datatables;
-use App\Models\SubService;
-use Session;
-class SubServicesController extends Controller
+use Intervention\Image\Facades\Image;
+Use Session;
+
+class SubfunctionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +22,8 @@ class SubServicesController extends Controller
      */
     public function index()
     {
-        // dd('this is the subservices index');
-        $data['page_title']='Sub Services';
-        return view('backend.subservices.index',$data);
+        $data['page_title']='Sub Functions';
+        return view('backend.subfunctions.index',$data);
     }
 
     /**
@@ -29,11 +32,11 @@ class SubServicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    
     {
-        $services=Service::all();
-        $data['page_title']='Sub Services';
-        return view('backend.subservices.create',$data)->with(compact('services'));
+        $data['page_title']='Sub-functions';
+        $whatwedo=Whatwedo::where('status','active')->get();
+        
+        return view('backend.subfunctions.create',$data)->with(compact('whatwedo'));
     }
 
     /**
@@ -44,16 +47,11 @@ class SubServicesController extends Controller
      */
     public function store(Request $request)
     {
+
+       
         $data=$request->all();
-
-        $subservice=SubService::create($data);
-
-        if ($subservice){
-            Session::flash('success_message','Item Added successfully');
-            return redirect()->route('subservices.index');
-        }else{
-            return back()->with('error_message','fail,please try again');
-        }
+        $subfunctions=Subfunction::create($data);
+        return redirect()->route('subwhatwedo.index')->with('success','question added successfully');
     }
 
     /**
@@ -75,7 +73,7 @@ class SubServicesController extends Controller
      */
     public function edit($id)
     {
-        dd('edit sub services ');
+        return 'edit subfunctions';
     }
 
     /**
@@ -102,19 +100,18 @@ class SubServicesController extends Controller
     }
 
 
-    public function fetchSubServices()
+    public function fetchSubfunctions()
     {
        
-        $models = DB::table('sub_services')
-        ->join('services', 'sub_services.service_id', '=', 'services.id')
-        ->select('sub_services.id', 'services.title', 'sub_services.title as meme','sub_services.status','')
+        $models = DB::table('subfunctions')
+        ->join('whatwedos', 'subfunctions.whatwedo_id', '=', 'whatwedos.id')
+        ->select('subfunctions.id', 'whatwedos.title', 'subfunctions.title as meme','subfunctions.status')
         ->get();
          return Datatables::of($models)
            ->rawColumns(['action'])
           
             ->addColumn('action', function ($model) {
-                $edit_url = route('subservices.edit',$model->id);
-                $view_url = route('subservices.show',$model->id);
+                $edit_url = route('subwhatwedo.edit',$model->id);
              return '<div class="dropdown ">
         <button class="btn btn-pink btn btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action
         <span class="caret"></span></button>
@@ -126,5 +123,4 @@ class SubServicesController extends Controller
             })
             ->make(true);
     }
-
 }

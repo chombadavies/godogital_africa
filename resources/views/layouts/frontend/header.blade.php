@@ -147,7 +147,7 @@
                                 <a href="{{route('contact')}}">Contact Us</a>
                             </li>
                             <li>
-                                <a href="{{route('contact')}}">What We DO</a>
+                                <a href="{{route('whatwe.do')}}">What We DO</a>
                             </li>
                         </ul>
                     </div>

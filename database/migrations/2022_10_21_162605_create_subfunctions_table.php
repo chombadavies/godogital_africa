@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWhatwedosTable extends Migration
+class CreateSubfunctionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateWhatwedosTable extends Migration
      */
     public function up()
     {
-        Schema::create('whatwedos', function (Blueprint $table) {
+        Schema::create('subfunctions', function (Blueprint $table) {
             $table->id();
-            $table->string('highlight');
+            $table->foreignId('whatwedo_id');
             $table->string('title');
-            $table->string('description');
             $table->enum('status',['active','inactive'])->default('active');
-            $table->string('image');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateWhatwedosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('whatwedos');
+        Schema::dropIfExists('subfunctions');
     }
 }

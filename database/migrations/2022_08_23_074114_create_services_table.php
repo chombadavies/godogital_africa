@@ -18,7 +18,6 @@ class CreateServicesTable extends Migration
             $table->string('title');
             $table->text('summery');
             $table->text('description');
-            $table->text('keypoints');
             $table->string('summery_image')->nullable();
             $table->string('description_image')->nullable();
             $table->timestamps();

@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Question;
 use App\Models\Client;
 use App\Models\Detail;
+use App\Models\Whatwedo;
 use Mapper;
 use App\Models\Blog;;
 
@@ -57,4 +58,12 @@ class IndexController extends Controller
           $detail=Detail::create($data);
           return redirect()->back()->with('success','information saved Successfully');
          }
+
+         public function whatWedo(){
+          $whatwedos=Whatwedo::where('status','active')->get();
+          $data['page_title']='What We Do- We accomodate everyone from all the sectors';
+         return view('frontend.pages.whatwedo',$data)->with(compact('whatwedos'));
+
+         }
 }
+

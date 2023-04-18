@@ -1661,6 +1661,17 @@ Author URI: http://themeforest.net/user/Ansonika/
   float: left;
   list-style: none;
 }
+
+.UlListt {
+  padding-left: 20px;
+}
+.UlListt li {
+  margin-bottom: 15px;
+   padding-left: 20px;
+  /* width: 50%;  */
+  float: left;
+  list-style: none;
+}
 /* .IEnquiry {
   background-color: #2a52be;
   padding-top: 18px;

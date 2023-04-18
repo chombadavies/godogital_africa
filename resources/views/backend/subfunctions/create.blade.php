@@ -14,7 +14,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">what we do</li>
+              <li class="breadcrumb-item active">Services</li>
             </ol>
           </div>
         </div>
@@ -27,40 +27,47 @@
         <div class="row">
           <!-- left column -->
           <div class="col-md-12">
-            <a href="<?=route('whatwedo.index')?>" class="btn btn-sm btn-success"><span class="fa fa-bars"><span> View List</a>
+            <a href="<?=route('services.index')?>" class="btn btn-sm btn-success"><span class="fa fa-bars"><span> View List</a>
             </span>
+           <br><br>
             <!-- general form elements -->
             <div class="card card-primary">
+            
               <div class="card-header">
-                <h3 class="card-title">Create </h3>
+                <h3 class="card-title">Create Sub-service</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('whatwedo.store')}}" method="POST" enctype="multipart/form-data">@csrf
+              <form role="form" action="{{route('subwhatwedo.store')}}" method="POST" enctype="multipart/form-data">@csrf
                 <div class="card-body">
                   <div class="row">
                   <div class="form-group col-md-6">
-                    <label for="">Title</label>
-                    <input type="text" class="form-control" name="title" value="{{old('title')}}" placeholder="what we  name">
+                    <label for="exampleInputEmail1">Parent Function</label>
+                    <select name="whatwedo_id" class="form-control">
+                      <option selected disabled>Select Parent Service</option>
+                      @foreach ($whatwedo as $item)
+                      <option value="{{$item->id}}">{{$item->title}}</option>
+                      @endforeach
+                    </select>
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="">Image</label>
-                    <input type="file" class="form-control" name="image" value="{{old('image')}}" placeholder="Image">
-                  </div>
-                </div>
-                <div class="row">
                  
                   <div class="form-group col-md-6">
-                    <label for="">Highlight</label>
-                    <input type="text" class="form-control" name="highlight" value="{{old('highlight')}}" placeholder="highlight">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="">Description</label>
-                    <input type="text" class="form-control" name="description" value="{{old('description')}}" placeholder="Description">
+                    <label for="exampleInputEmail1">Sub Function Title</label>
+                    <input type="text" class="form-control" name="title" value="{{old('title')}}" placeholder="Enter sub function name">
                   </div>
                 </div>
-             
-             
+                  <div class="form-group">
+                    <label>Status</label>
+                    <select name="status" class="form-control">
+                      <option  selected disabled>Status</option>
+                      <option value="active" >Active</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                  </div>
+
+                 
+                  
+                 
                   
                 </div>
                 <!-- /.card-body -->

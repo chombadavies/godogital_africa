@@ -131,6 +131,7 @@
                       <th>Service</th>
                       <th>Client Message</th>
                       <th>Status</th>
+                      <td>Date</td>
                       <th>Respond</th>
                     </tr>
                     </thead>
@@ -142,7 +143,8 @@
                     <td>{{$message->email}}</td>   
                     <td>{{$message->phone_number}}</td>
                     <td>{{$message->title}}</td> 
-                    <td>{{$message->message}}</td>
+                    <td style="word-wrap: break-word;">{{$message->message}}</td>
+                   
                     <td>@if ($message->status=='responded')
                       <a class="badge badge-success"  
                           href="javascript:void(0)">Responded</a>
@@ -152,6 +154,7 @@
                          
                       @endif
                   </td>
+                  <td>{{$message->created_at}}</td>
 
                   <td class="text-centre">
                     

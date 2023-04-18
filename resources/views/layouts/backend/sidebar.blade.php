@@ -182,6 +182,54 @@
           
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+              What we Do
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('whatwedo.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('whatwedo.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List</p>
+                </a>
+              </li>
+          
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+              Sub Fuctions
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('subwhatwedo.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('subwhatwedo.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List</p>
+                </a>
+              </li>
+          
+            </ul>
+          </li>
    
           <li class="nav-item">
             <a href="#" class="nav-link">

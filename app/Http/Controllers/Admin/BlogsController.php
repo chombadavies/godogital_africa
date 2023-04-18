@@ -8,6 +8,7 @@ use DateTime;
 use App\Models\Blog;
 use Intervention\Image\Facades\Image;
 use Auth;
+use App\Http\Controllers\Admin\BlogsController;
 
 class BlogsController extends Controller
 {
@@ -154,5 +155,10 @@ class BlogsController extends Controller
 
             })
             ->make(true);
+    }
+
+    public function data(){
+        $blogs=Blog::all();
+        return response()->json($blogs);
     }
 }

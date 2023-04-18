@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Whatwedo extends Model
+class Subfunction extends Model
 {
     use HasFactory;
+
     protected $guarded=[];
 
-    public function subfunctions(){
-        return $this->hasMany('App\Models\Subfunction');
+    public function whatwedos(){
+        return $this->belongsTo('App\Models\Whatwedo');
     }
 }

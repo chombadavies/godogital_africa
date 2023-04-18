@@ -12,13 +12,7 @@
 		<header class="version_1" id="header-ajax">
 			@include('layouts.frontend.header')
 		</header>
-   
-		
-
-
-
-
-    @yield('content')
+   @yield('content')
 
 		
 	@include('layouts.frontend.footer')

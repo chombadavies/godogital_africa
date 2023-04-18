@@ -8,6 +8,7 @@ Route::any('blog/{id}',[App\Http\Controllers\Frontend\IndexController::class,'bl
 Route::any('about-us',[App\Http\Controllers\Frontend\IndexController::class,'aboutUs'])->name('about');
 Route::any('contact-us',[App\Http\Controllers\Frontend\IndexController::class,'contactUs'])->name('contact');
 Route::any('details',[App\Http\Controllers\Frontend\IndexController::class,'communication'])->name('communication');
+Route::any('what-we-do',[App\Http\Controllers\Frontend\IndexController::class,'whatWedo'])->name('whatwe.do');
 
 
 

@@ -14,19 +14,19 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         DB::table('settings')->insert([[
-            'title'=>'Omar Opticians',
-            'meta_description'=>'online opticians online shopping',
-            'meta_keywords'=>'online opticoans online shopping',
-            'logo'=>'images/cropped-hadiyed-2.webp',
-            'favicon'=>'images/cropped-hadiyed-2.webp',
-            'address'=>'54-10230',
-            'phone'=>'0743666736',
-            'email'=>'omaropticians@info.com',
-            'footer'=>'Omar Opticians',
-            'facebook_url'=>'https://www.facebook.com/Hadiyedshop',
-            'twitter_url'=>'',
+            'title'=>'Godigital Africa',
+            'meta_description'=>'digital marketing, website developers,system developers',
+            'meta_keywords'=>'digital marketing, website developers,system developers',
+            'logo'=>'frontend/img/logo.jpeg',
+            'favicon'=>'frontend/img/logo.jpeg',
+            'address'=>'54-00100',
+            'phone'=>'+254 700222249',
+            'email'=>'info@godigitalafrica.com',
+            'footer'=>'Godigital Africa',
+            'facebook_url'=>'https://www.facebook.com/AfricaGoDigital',
+            'twitter_url'=>'https://twitter.com/AfricaGdigital?t=aUD2lwAX16Sj97SCg0BIEA&s=09',
             'youtube_url'=>'https://www.youtube.com/watch?v=V_TB8RUoYaQ',
-            'instagram_url'=>'',
+            'instagram_url'=>'https://www.instagram.com/godigitalafrica1/?__coig_restricted=1',
         ]]);
         }
 }

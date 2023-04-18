@@ -14,7 +14,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Services</li>
+              <li class="breadcrumb-item active">what we do</li>
             </ol>
           </div>
         </div>
@@ -27,80 +27,48 @@
         <div class="row">
           <!-- left column -->
           <div class="col-md-12">
-            <a href="<?=route('services.index')?>" class="btn btn-sm btn-success"><span class="fa fa-bars"><span> View List</a>
+            <a href="<?=route('whatwedo.index')?>" class="btn btn-sm btn-success"><span class="fa fa-bars"><span> View List</a>
             </span>
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Service</h3>
+                <h3 class="card-title">Create </h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{{route('services.update',$service->id)}}" method="POST" enctype="multipart/form-data">@csrf
-                @method('PUT')
+              <form role="form" action="{{route('whatwedo.update',$function->id)}}" method="POST" enctype="multipart/form-data">@csrf
+                @method('put');
                 <div class="card-body">
-
                   <div class="row">
-                    <div class="form-group col-md-6">
-                      <label for="exampleInputEmail1">Service Title</label>
-                      <input type="text" class="form-control" name="title" value="{{$service->title}}" >
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="exampleInputEmail1">Service Logo</label>
-                      <input type="file" class="form-control" name="service_logo" value="{{$service->logo}}" >
-                      <img src="{{asset('backend/uploads/'.$service->service_logo)}}" alt="service logo">
-                     
-                    </div>
+                  <div class="form-group col-md-6">
+                    <label for="">Title</label>
+                    <input type="text" class="form-control" name="title" value="{{$function->title}}" placeholder="what we  name">
                   </div>
-                  <div class="row">
-                    <div class="form-group col-md-6">
-                      <label for="">Service Narration</label>
-                      <input type="text" class="form-control" name="narration"  value="{{$service->narration}}">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="">Category</label>
-                     <select name="category" id="" class="form-control">
-                      <option value="web_services"  {{$service->category =='web_services'? 'selected':''}}> Web Services</option>
-                      <option value="digital_marketing" {{$service->category =='digital_marketing'? 'selected':''}}>Digital Marketing</option>
-                      <option value="email_sms_marketing" {{$service->category =='email_sms_marketing'? 'selected':''}}>Email/sms Marketing</option>
-                      <option value="ecommerse" {{$service->category =='ecommerse'? 'selected':''}}>Ecommerse</option>
-                      
-                     </select>
-                    </div>
-
+                  <div class="form-group col-md-6">
+                    <label for="">Image</label>
+                    <input type="file" class="form-control" name="image" value="{{$function->image}}" placeholder="Image">
+                    <img src="{{asset('backend/uploads/'.$function->image)}}" alt="summery image" height="70px" width="70px">
                   </div>
-                   
-                  <div class="form-group">
-                    <label>Service Summery</label>
-                    <textarea class="form-control" name="summery" rows="3"  placeholder="Enter service Summery">{{$service->summery}}</textarea>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Service Description</label>
-                    <textarea class="form-control" rows="3" name="description" placeholder="Enter service description">{{$service->description}}</textarea>
-                  </div>
+                </div>
                 <div class="row">
-                    <div class="form-group col-md-6">
-                      <label for="exampleInputEmail1">Summery Image</label>
-                      <input type="file" class="form-control" name="summery_image" value="{{$service->summery_image}}" >
-                      <img src="{{asset('backend/uploads/'.$service->summery_image)}}" alt="summery image" height="70px" width="70px">
-                    
-                    </div>
-      
-                    <div class="form-group col-md-6">
-                      <label for="exampleInputEmail1">Description Image</label>
-                      <input type="file" class="form-control" name="description_image" value="{{$service->description_image}}" >
-                      <img src="{{asset('backend/uploads/'.$service->description_image)}}" alt="description image" width="70px" height="70px">
-                   
-                    </div>
-                    
-      
-                      </div>
+                 
+                  <div class="form-group col-md-6">
+                    <label for="">Highlight</label>
+                    <input type="text" class="form-control" name="highlight" value="{{$function->highlight}}" placeholder="highlight">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="">Description</label>
+                    <input type="text" class="form-control" name="description" value="{{$function->description}}" placeholder="Description">
+                  </div>
+                </div>
+             
+             
+                  
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>
             </div>

@@ -32,7 +32,7 @@
 
           <div class="col-12">
 
-            <a href="<?=route('whatwedo.create')?>" class="btn btn-sm btn-success" data-title="Add Item "><span class="fa fa-plus"><span> Add New Function</a>
+            <a href="<?=route('subwhatwedo.create')?>" class="btn btn-sm btn-success" data-title="Add Item "><span class="fa fa-plus"><span> Add New Sub-Service</a>
 
                                        
  </div>
@@ -56,10 +56,8 @@
                   <tr>
                     
                                         <th>Action</th>
-                                        <th>Function Highlight </th>
-                                        <th>Function Title</th>
-                                         <th>Function Image</th>
-                                         <th>function Description</th>
+                                        <th>Service Title</th>
+                                        <th>Sub service</th>
                                          <th>Status</th>
                                          
                                   
@@ -96,15 +94,13 @@
          "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]],
         "order": [[1, "desc" ]],
        
-           ajax:'<?=url("/admin/fetchfunctions")?>',
+           ajax:'<?=url("/admin/fetchsubfunctions")?>',
             columns: [
             {data: 'action', name: 'action',searchable:false,orderable:false},
-            {data: 'highlight', name: 'highlight'},
            {data: 'title', name: 'title'},
-           {data: 'photo', name: 'photo'},
-           {data: 'description', name: 'description'},
+           {data: 'meme', name: 'meme'},
            {data: 'status', name: 'status'},
-         
+          
             ],
 
 
